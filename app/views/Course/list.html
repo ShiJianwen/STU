@@ -1,0 +1,35 @@
+<div ng-cloak>
+  <md-content>
+    <md-button class="md-raised md-primary" ui-sref="course.add" ng-show="user==='admin'">新增</md-button>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>课程号</th>
+          <th>课程名称</th>
+          <th>任课教师号</th>
+          <th>任课教师</th>
+          <th>学时</th>
+          <th>学分</th>
+          <th>上课时间</th>
+          <th>上课地点</th>
+          <th>考试时间</th>
+          <th ng-show="user==='admin'">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="course in courses">
+          <td>{{course.c_no}}</td>
+          <td>{{course.c_name}}</td>
+          <td>{{course.t_no}}</td>
+          <td>{{course.t_name}}</td>
+          <td>{{course.c_hour}}</td>
+          <td>{{course.c_score}}</td>
+          <td>{{course.c_time}}</td>
+          <td>{{course.c_place}}</td>
+          <td>{{course.c_examtime}}</td>
+          <td><a href="javascript:void(0)" ng-click="rewriteCourse(course)">修改</a>&nbsp;&nbsp;<a href="javascript:void(0)" ng-click="deleteCourse(course)">删除</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </md-content>
+</div>

@@ -1,0 +1,35 @@
+<div ng-cloak>
+	<md-content>
+		<md-button class="md-raised md-primary" ui-sref="grade.add">新增</md-button>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>学生号</th>
+					<th>学生姓名</th>
+					<th>课程号</th>
+					<th>课程名</th>
+					<th>平时成绩</th>
+					<th>考试成绩</th>
+					<th>总评成绩</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="grade in grades">
+					<td>{{grade.s_no}}</td>
+					<td>{{grade.s_name}}</td>
+					<td>{{grade.c_no}}</td>
+					<td>{{grade.c_name}}</td>
+					<td>{{grade.common_grade}}</td>
+					<td>{{grade.exam_grade}}</td>
+					<td>{{grade.final_grade}}</td>
+					<td>
+						<a href="javascript:void(0)" ui-sref="grade.rewrite({sno: grade.s_no, cno: grade.c_no, cgrade: grade.common_grade, egrade: grade.exam_grade, fgrade: grade.final_grade})">修改</a>
+						&nbsp;&nbsp;
+						<a href="javascript:void(0)" ng-click="deleteGrade(grade)">删除</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</md-content>
+</div>

@@ -1,0 +1,27 @@
+<div layout="column" ng-cloak>
+	<md-content layout-padding>
+		<form name="projectForm">
+			<md-input-container class="md-block">
+				<label>学院号</label>
+				<input required name="dno" ng-model="dno">
+				<div ng-messages="projectForm.dno.$error">
+					<div ng-message="required">必填</div>
+				</div>
+			</md-input-container>
+			<md-input-container class="md-block">
+				<label>学院名</label>
+				<input required name="dname" ng-model="dname">
+				<div ng-messages="projectForm.dname.$error">
+					<div ng-message="required">必填</div>
+				</div>
+			</md-input-container>
+			<md-input-container class="md-block">
+				<label>学院描述</label>
+				<input name="describe" ng-model="describe"
+                 />
+
+			</md-input-container>
+			<md-button class="md-raised md-primary" ng-click="addNewDept()" ng-disabled="!dno||!dname">确定添加</md-button>
+		</form>
+	</md-content>
+</div>

@@ -1,0 +1,28 @@
+<div ng-cloak>
+  <md-content>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>学号</th>
+          <th>姓名</th>
+          <th>性别</th>
+          <th>出生日期</th>
+          <th>入学成绩</th>
+          <th>所在学院</th>
+          <th>所在学院号</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="stu in stus">
+          <td>{{stu.s_no}}</td>
+          <td><a ui-sref="search.student({sno: stu.s_no})">{{stu.s_name}}</a></td>
+          <td>{{stu.s_sex}}</td>
+          <td>{{stu.s_birthday}}</td>
+          <td>{{stu.grade}}</td>
+          <td>{{stu.d_name}}</td>
+          <td>{{stu.d_no}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </md-content>
+</div>

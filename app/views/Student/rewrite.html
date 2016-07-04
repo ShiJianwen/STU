@@ -1,0 +1,45 @@
+<div layout="column" ng-cloak>
+	<md-content layout-padding>
+		<form name="projectForm">
+			<md-input-container class="md-block">
+				<label>学号</label>
+				<input required name="sno" ng-model="sno" disabled>
+				<div ng-messages="projectForm.sno.$error">
+					<div ng-message="required">必填</div>
+				</div>
+			</md-input-container>
+			<md-input-container class="md-block">
+				<label>姓名</label>
+				<input required name="sname" ng-model="sname">
+				<div ng-messages="projectForm.sname.$error">
+					<div ng-message="required">必填</div>
+				</div>
+			</md-input-container>
+			<md-input-container class="md-block">
+				<label>性别</label>
+				<md-select ng-model="sex">
+					<md-option value="男">男</md-option>
+					<md-option value="女">女</md-option>
+				</md-select>
+			</md-input-container>
+			<div layout-gt-xs="row">
+				<md-datepicker ng-model="birthday" md-placeholder="出生日期"></md-datepicker>
+			</div>
+			<md-input-container class="md-block">
+				<label>入学成绩</label>
+				<input required name="grade" ng-model="score">
+				<div ng-messages="projectForm.grade.$error">
+					<div ng-message="required">必填</div>
+				</div>
+			</md-input-container>
+			<md-input-container class="md-block">
+				<label>所在学院号</label>
+				<md-select ng-model="dno">
+					<md-option ng-repeat="dept in depts" value="{{dept.d_no}}">{{dept.d_no}} {{dept.d_name}}</md-option>
+				</md-select>
+			</md-input-container>
+			<md-button class="md-raised md-primary" ng-click="rewriteStu()" >确定修改</md-button>
+		</form>
+	</md-content>
+</div>
+

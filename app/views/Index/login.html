@@ -1,0 +1,13 @@
+<md-content layout-padding>
+  <form name="projectForm">
+    
+    <md-input-container class="md-block">
+      <label>学号或管理员名</label>
+      <input required name="clientName" ng-model="sno">
+      <div ng-messages="projectForm.clientName.$error">
+        <div ng-message="required">必填.</div>
+      </div>
+    </md-input-container>
+    <md-button class="md-raised md-primary" ng-click="doLogin()">登录</md-button>
+  </form>
+</md-content>

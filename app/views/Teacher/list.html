@@ -1,0 +1,33 @@
+<div ng-cloak>
+  <md-content>
+    <md-button class="md-raised md-primary" ui-sref="teacher.add">新增</md-button>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>职工号</th>
+          <th>姓名</th>
+          <th>性别</th>
+          <th>出生日期</th>
+          <th>所在学院</th>
+          <th>所在学院号</th>
+          <th>职称</th>
+          <th>专业方向</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="teacher in teachers">
+          <td>{{teacher.t_no}}</td>
+          <td>{{teacher.t_name}}</td>
+          <td>{{teacher.t_sex}}</td>
+          <td>{{teacher.t_birthday}}</td>
+          <td>{{teacher.d_name}}</td>
+          <td>{{teacher.d_no}}</td>
+          <td>{{teacher.t_title}}</td>
+          <td>{{teacher.t_direction}}</td>
+          <td><a href="javascript:void(0)" ng-click="rewriteTech(teacher)">修改</a>&nbsp;&nbsp;<a href="javascript:void(0)" ng-click="deleteTech(teacher)">删除</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </md-content>
+</div>

@@ -1,0 +1,30 @@
+<div layout="column" ng-cloak>
+	<md-content layout-padding>
+		<form name="projectForm">
+			
+			
+			<md-input-container class="md-block" ng-show="user==='admin'">
+				<label>学生号</label>
+				<md-select ng-model="sno">
+					<md-option ng-repeat="stu in stus" value="{{stu.s_no}}">{{stu.s_no}} {{stu.s_name}}</md-option>
+				</md-select>
+			</md-input-container>
+			<md-input-container class="md-block" ng-show="user!=='admin'">
+				<label>学生号</label>
+				<md-select ng-model="sno">
+					<md-option value="{{user}}" selected>{{user}}</md-option>
+				</md-select>
+			</md-input-container>
+			<md-input-container class="md-block">
+				<label>课程号</label>
+				<md-select ng-model="cno">
+					<md-option ng-repeat="course in courses" value="{{course.c_no}}">{{course.c_no}} {{course.c_name}}</md-option>
+				</md-select>
+			</md-input-container>
+			
+			
+			
+			<md-button class="md-raised md-primary" ng-click="addNewSC()" >确定添加</md-button>
+		</form>
+	</md-content>
+</div>

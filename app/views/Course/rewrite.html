@@ -1,0 +1,55 @@
+<div layout="column" ng-cloak>
+	<md-content layout-padding>
+		<form name="projectForm">
+			<md-input-container class="md-block">
+				<label>课程号</label>
+				<input required name="cno" ng-model="cno" disabled>
+				<div ng-messages="projectForm.cno.$error">
+					<div ng-message="required">必填</div>
+				</div>
+			</md-input-container>
+			<md-input-container class="md-block">
+				<label>课程名称</label>
+				<input required name="cname" ng-model="cname">
+				<div ng-messages="projectForm.cname.$error">
+					<div ng-message="required">必填</div>
+				</div>
+			</md-input-container>
+			<md-input-container class="md-block">
+				<label>任课教师号</label>
+				<md-select ng-model="tno">
+					<md-option ng-repeat="teacher in teachers" value="{{teacher.t_no}}">{{teacher.t_no}} {{teacher.t_name}}</md-option>
+				</md-select>
+			</md-input-container>
+			<md-input-container class="md-block">
+				<label>学时</label>
+				<input required name="hour" ng-model="hour">
+				<div ng-messages="projectForm.hour.$error">
+					<div ng-message="required">必填</div>
+				</div>
+			</md-input-container>
+			<md-input-container class="md-block">
+				<label>学分</label>
+				<input required name="score" ng-model="score">
+				<div ng-messages="projectForm.score.$error">
+					<div ng-message="required">必填</div>
+				</div>
+			</md-input-container>
+			<div layout-gt-xs="row">
+				<md-datepicker ng-model="time" md-placeholder="上课时间"></md-datepicker>
+			</div>
+			<md-input-container class="md-block">
+				<label>上课地点</label>
+				<input required name="place" ng-model="place">
+				<div ng-messages="projectForm.place.$error">
+					<div ng-message="required">必填</div>
+				</div>
+			</md-input-container>
+			<div layout-gt-xs="row">
+				<md-datepicker ng-model="examtime" md-placeholder="考试时间"></md-datepicker>
+			</div>
+			
+			<md-button class="md-raised md-primary" ng-click="rewriteCourse()">确定修改</md-button>
+		</form>
+	</md-content>
+</div>

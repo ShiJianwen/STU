@@ -1,0 +1,41 @@
+<div layout="column" ng-cloak>
+	<md-content layout-padding>
+		<form name="projectForm">
+			<md-input-container class="md-block">
+				<label>学生号</label>
+				<md-select ng-model="sno" ng-disabled='true'>
+					<md-option ng-repeat="stu in stus" value="{{stu.s_no}}">{{stu.s_no}} {{stu.s_name}}</md-option>
+				</md-select>
+			</md-input-container>
+			<md-input-container class="md-block">
+				<label>课程号</label>
+				<md-select ng-model="cno" ng-disabled='true'>
+					<md-option ng-repeat="sc in scs" value="{{sc.c_no}}" ng-if="sc.s_no===sno">{{sc.c_no}}</md-option>
+				</md-select>
+			</md-input-container>
+			<md-input-container class="md-block">
+				<label>平时成绩</label>
+				<input required name="cgrade" ng-model="cgrade">
+				<div ng-messages="projectForm.cgrade.$error">
+					<div ng-message="required">必填</div>
+				</div>
+			</md-input-container>
+			<md-input-container class="md-block">
+				<label>考试成绩</label>
+				<input required name="egrade" ng-model="egrade">
+				<div ng-messages="projectForm.egrade.$error">
+					<div ng-message="required">必填</div>
+				</div>
+			</md-input-container>
+			<md-input-container class="md-block">
+				<label>总评成绩</label>
+				<input required name="fgrade" ng-model="fgrade">
+				<div ng-messages="projectForm.fgrade.$error">
+					<div ng-message="required">必填</div>
+				</div>
+			</md-input-container>
+
+			<md-button class="md-raised md-primary" ng-click="rewriteGrade()" >确定修改</md-button>
+		</form>
+	</md-content>
+</div>

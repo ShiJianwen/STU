@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="STU">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="components/angular-material/angular-material.min.css">
+	<link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.min.css">
+	</head>
+<body>
+	<md-toolbar md-scroll-shrink ng-if="true" ng-controller="LeaderCtrl">
+		<div class="md-toolbar-tools">
+			<h3 ui-sref="student.list" style="cursor: pointer">
+				<span>教学管理系统</span>
+			</h3>
+			<span flex></span>
+			<md-button aria-label="Go Back" ui-sref="student.list" ng-show="user==='admin'">学生管理</md-button>
+			<md-button aria-label="Go Back" ui-sref="teacher.list" ng-show="user==='admin'">教职工管理</md-button>
+			<md-button aria-label="Go Back" ui-sref="department.list" ng-show="user">学院管理</md-button>
+			<md-button aria-label="Go Back" ui-sref="course.list" ng-show="user==='admin'">课程信息管理</md-button>
+			<md-button aria-label="Go Back" ui-sref="sc.list" ng-show="user==='admin' && user">选课管理</md-button>
+			<md-button aria-label="Go Back" ui-sref="sc.stulist({s_no: user})" ng-show="user!=='admin' && user">选课</md-button>
+			<md-button aria-label="Go Back" ui-sref="grade.list" ng-show="user==='admin'">成绩管理</md-button>
+			<md-button aria-label="Go Back" ui-sref="search.search" ng-show="user">信息查询</md-button>
+			<md-button aria-label="Go Back" ng-show="user">欢迎登录 {{user}}</md-button>
+			<md-button aria-label="Go Back" ng-show="user" ng-click="doLogout()">注销</md-button>
+			<md-button aria-label="Go Back" ng-show="!user" ui-sref="index.login" >登录</md-button>
+		</div>
+	</md-toolbar>
+	<div ui-view></div>
+	<script src="components/angular/angular.min.js"></script>
+	<script src="components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="components/angular-animate/angular-animate.min.js"></script>
+	<script src="components/angular-aria/angular-aria.min.js"></script>
+	<script src="components/angular-messages/angular-messages.min.js"></script>
+	<script src="components/angular-material/angular-material.min.js"></script>
+	<script src="public/js/main.js"></script>
+	<script src="public/js/service.js"></script>
+	<script src="public/js/directive.js"></script>
+	<script src="public/js/controller.js"></script>
+</body>
+</html>

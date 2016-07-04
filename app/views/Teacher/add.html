@@ -1,0 +1,52 @@
+<div layout="column" ng-cloak>
+	<md-content layout-padding>
+		<form name="projectForm">
+			<md-input-container class="md-block">
+				<label>职工号</label>
+				<input required name="sno" ng-model="tno">
+				<div ng-messages="projectForm.sno.$error">
+					<div ng-message="required">必填</div>
+				</div>
+			</md-input-container>
+			<md-input-container class="md-block">
+				<label>姓名</label>
+				<input required name="sname" ng-model="tname">
+				<div ng-messages="projectForm.sname.$error">
+					<div ng-message="required">必填</div>
+				</div>
+			</md-input-container>
+			<md-input-container class="md-block">
+				<label>性别</label>
+				<md-select ng-model="sex">
+					<md-option value="男" selected>男</md-option>
+					<md-option value="女">女</md-option>
+				</md-select>
+			</md-input-container>
+			<div layout-gt-xs="row">
+				<md-datepicker ng-model="birthday" md-placeholder="出生日期"></md-datepicker>
+			</div>
+			<md-input-container class="md-block">
+				<label>所在学院号</label>
+				<md-select ng-model="dno">
+					<md-option ng-repeat="dept in depts" value="{{dept.d_no}}">{{dept.d_no}} {{dept.d_name}}</md-option>
+				</md-select>
+			</md-input-container>
+			<md-input-container class="md-block">
+				<label>职称</label>
+				<md-select ng-model="title">
+					<md-option value="教授" selected>教授</md-option>
+					<md-option value="副教授">副教授</md-option>
+					<md-option value="讲师">讲师</md-option>
+				</md-select>
+			</md-input-container>
+			<md-input-container class="md-block">
+				<label>专业方向</label>
+				<input required name="direction" ng-model="direction">
+				<div ng-messages="projectForm.dno.$error">
+					<div ng-message="required">必填</div>
+				</div>
+			</md-input-container>
+			<md-button class="md-raised md-primary" ng-click="addNewTech()" >确定添加</md-button>
+		</form>
+	</md-content>
+</div>

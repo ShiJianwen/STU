@@ -1,0 +1,23 @@
+<div ng-cloak>
+  <md-content>
+    <md-button class="md-raised md-primary" ui-sref="department.add" ng-show="user==='admin'">新增</md-button>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>学院号</th>
+          <th>学院名</th>
+          <th>学院描述</th>
+          <th ng-show="user==='admin'">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="dept in depts">
+          <td>{{dept.d_no}}</td>
+          <td><a ui-sref="search.department({dno: dept.d_no})">{{dept.d_name}}</a></td>
+          <td>{{dept.d_describe}}</td>
+          <td ng-show="user==='admin'"><a href="javascript:void(0)" ng-click="rewriteDept(dept)">修改</a>&nbsp;&nbsp;<a href="javascript:void(0)" ng-click="deleteDept(dept)">删除</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </md-content>
+</div>
